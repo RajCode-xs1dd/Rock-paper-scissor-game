@@ -240,3 +240,60 @@ body {
         0 2px 4px rgba(0, 0, 0, 0.1),
         0 0 20px rgba(124, 77, 255, 0.8);
 }
+
+.dev-footer {
+    position: fixed;
+    bottom: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-label);
+    letter-spacing: 0.03em;
+    z-index: 50;
+    transition: color 0.3s ease;
+}
+
+.dev-footer a {
+    color: var(--text-label);
+    text-decoration: none;
+    font-weight: 800;
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
+}
+
+/* Link Hover State: Lights up with your primary accent color */
+.dev-footer a:hover {
+    color: var(--primary);
+}
+
+/* Subtle underline animation when hovering over the link */
+.dev-footer a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.dev-footer a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Heart Micro-animation: Beats gently in the background */
+.footer-heart {
+    color: #ef4444;
+    margin: 0 2px;
+    display: inline-block;
+    animation: heartBeat 1.5s ease infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
